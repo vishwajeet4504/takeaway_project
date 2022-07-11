@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Vishwajeet Tekale",
+    "sem1": "100",
+    "sem2": "98",
+    "sem3": "300",
+    "sem4": "400"
+  },
+  {
+    "name": "anil parab",
+    "sem1": "150",
+    "sem2": "220",
+    "sem3": "340",
+    "sem4": "500"
+  },
+  {
+    "name": "vinayak gaonkar",
+    "sem1": "170",
+    "sem2": "225",
+    "sem3": "342",
+    "sem4": "420"
+  },
+  {
+    "name": "Vinay kumar",
+    "sem1": "10",
+    "sem2": "20",
+    "sem3": "34",
+    "sem4": "50"
+  },
+  {
+    "name": "gajesh pai",
+    "sem1": "205",
+    "sem2": "450",
+    "sem3": "30",
+    "sem4": "0"
+  },
+  {
+    "name": "Prathamesh gaonkar",
+    "sem1": "15",
+    "sem2": "240",
+    "sem3": "430",
+    "sem4": "100"
+  },
+  {
+    "name": "shreyas naik",
+    "sem1": "105",
+    "sem2": "122",
+    "sem3": "430",
+    "sem4": "100"
+  },
+  {
+    "name": "Shreya pai",
+    "sem1": "125",
+    "sem2": "240",
+    "sem3": "478",
+    "sem4": "160"
+  },
+  {
+    "name": "sarthak naik",
+    "sem1": "120",
+    "sem2": "40",
+    "sem3": "78",
+    "sem4": "60"
+  },
+  {
+    "name": "aniket gaonkar",
+    "sem1": "125",
+    "sem2": "240",
+    "sem3": "478",
+    "sem4": "160"
+  }
+
+]
