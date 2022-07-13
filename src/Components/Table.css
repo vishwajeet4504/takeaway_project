@@ -20,6 +20,13 @@ table{
     padding: 6px;
     font-size: 20px;
 }
+#searchStudent{
+    background-color: lightgray;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1% 2%;
+}
 button{
     padding: 8px;
     border: 1px solid rgb(158, 157, 157);
@@ -29,3 +36,29 @@ button{
     cursor: pointer;
 }
 
+@media screen and (max-width: 1000px) {
+    .student_table > table{
+        width: 100%;
+    }
+    button{
+        padding: 6px;
+        font-size: 12px;
+        width: 4.5em;
+    }
+}
+@media screen and (max-width: 590px) {
+    .student_table > table{
+        height: 90vh;
+    }
+    .student_table > table > thead > th,.student_table > table > tbody > tr >td{
+        text-align: center;
+        border: 1px solid #000;
+        padding: 2px;
+        font-size: 10px;
+    }
+    button{
+        padding: 4px;
+        font-size: 10px;
+        width: 4.1em;
+    }
+}

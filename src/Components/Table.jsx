@@ -37,17 +37,40 @@ const Table = () => {
     });
   };
 
+  //fucnction for search functionality
+  const filterStudent = (e) => {
+    if (e.target.value !== "") {
+      setUser(
+        user.filter(function (student) {
+          let str = student.name.substr(0, e.target.value.length);
+          console.log(str);
+          if (str.toLowerCase() === e.target.value.toLowerCase())
+            return student;
+        })
+      );
+    } else {
+      setUser(dataobj);
+    }
+  };
+
   return (
     <div className="student_table">
       <table border={0}>
         <thead>
-          <th></th>
+          <th>Student Name</th>
           <th colSpan={2}>First Year</th>
           <th colSpan={2}>Second Year</th>
           <th colSpan={1}></th>
         </thead>
         <thead>
-          <th>Student Name</th>
+          <th>
+            <input
+              type="text"
+              id="searchStudent"
+              placeholder="Search Student"
+              onChange={filterStudent}
+            />
+          </th>
           <th>Semester 1</th>
           <th>Semester 2</th>
           <th>Semester 3</th>
@@ -58,7 +81,7 @@ const Table = () => {
           <tbody>
             {user?.map((student, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td>{student.name}</td>
                   <td>{student.sem1}</td>
                   <td>{student.sem2}</td>

@@ -3,71 +3,71 @@
     "name": "Vishwajeet Tekale",
     "sem1": "100",
     "sem2": "98",
-    "sem3": "300",
-    "sem4": "400"
+    "sem3": "40",
+    "sem4": "48"
   },
   {
-    "name": "anil parab",
-    "sem1": "150",
-    "sem2": "220",
-    "sem3": "340",
-    "sem4": "500"
-  },
-  {
-    "name": "vinayak gaonkar",
-    "sem1": "170",
-    "sem2": "225",
-    "sem3": "342",
-    "sem4": "420"
-  },
-  {
-    "name": "Vinay kumar",
-    "sem1": "10",
-    "sem2": "20",
+    "name": "Anil parab",
+    "sem1": "15",
+    "sem2": "22",
     "sem3": "34",
     "sem4": "50"
   },
   {
-    "name": "gajesh pai",
-    "sem1": "205",
-    "sem2": "450",
+    "name": "Vinayak gaonkar",
+    "sem1": "17",
+    "sem2": "22",
+    "sem3": "54",
+    "sem4": "62"
+  },
+  {
+    "name": "Vinay kumar",
+    "sem1": "90",
+    "sem2": "80",
+    "sem3": "74",
+    "sem4": "50"
+  },
+  {
+    "name": "Gajesh pai",
+    "sem1": "20",
+    "sem2": "45",
     "sem3": "30",
-    "sem4": "0"
+    "sem4": "45"
   },
   {
     "name": "Prathamesh gaonkar",
     "sem1": "15",
-    "sem2": "240",
-    "sem3": "430",
-    "sem4": "100"
+    "sem2": "24",
+    "sem3": "43",
+    "sem4": "10"
   },
   {
-    "name": "shreyas naik",
-    "sem1": "105",
-    "sem2": "122",
-    "sem3": "430",
-    "sem4": "100"
+    "name": "Shreyas naik",
+    "sem1": "10",
+    "sem2": "12",
+    "sem3": "43",
+    "sem4": "10"
   },
   {
     "name": "Shreya naik",
-    "sem1": "125",
-    "sem2": "240",
-    "sem3": "478",
-    "sem4": "160"
+    "sem1": "12",
+    "sem2": "24",
+    "sem3": "47",
+    "sem4": "16"
   },
   {
-    "name": "sarthak naik",
-    "sem1": "120",
+    "name": "Sarthak naik",
+    "sem1": "12",
     "sem2": "40",
     "sem3": "78",
     "sem4": "60"
   },
   {
-    "name": "aniket gaonkar",
-    "sem1": "125",
-    "sem2": "240",
-    "sem3": "478",
-    "sem4": "160"
+    "name": "Aniket gaonkar",
+    "sem1": "12",
+    "sem2": "24",
+    "sem3": "47",
+    "sem4": "16"
   }
 
 ]

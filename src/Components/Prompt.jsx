@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Prompt.css";
 
 const Prompt = (props) => {
@@ -14,6 +14,12 @@ const Prompt = (props) => {
   const [tempsem3, changeSem3] = useState(sem3);
   const [tempsem4, changeSem4] = useState(sem4);
 
+  useEffect(() => {
+    changeSem1(sem1);
+    changeSem2(sem2);
+    changeSem3(sem3);
+    changeSem4(sem4);
+  }, [props?.userData]);
   return props.trigger ? (
     <div className="popup">
       <div className="popupData">
