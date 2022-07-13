@@ -1,106 +1,101 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Prompt.css";
 
 const Prompt = (props) => {
+  //changed usestate is used to check if there are any changes made so that the save button becomes visible
   const [changed, setChanged] = useState(false);
+
+  //storing the data which we got in the props which is supposed to be changed
   const { name, sem1, sem2, sem3, sem4 } = props?.userData;
-  const [cngdata, setchgdata] = useState();
-  const [changedUser, funChangedUser] = useState();
-  const [user, setUser] = useState({
-    name,
-    sem1,
-    sem2,
-    sem3,
-    sem4,
-  });
-  useEffect(() => {}, [user]);
+
+  //usestates to change the sem marks when editing is done
+  const [tempsem1, changeSem1] = useState(sem1);
+  const [tempsem2, changeSem2] = useState(sem2);
+  const [tempsem3, changeSem3] = useState(sem3);
+  const [tempsem4, changeSem4] = useState(sem4);
+
   return props.trigger ? (
     <div className="popup">
       <div className="popupData">
         <div className="popup_content">
           <h2>Edit {name}'s Data</h2>
+          <form>
+            <input
+              id="sem1"
+              type="number"
+              defaultValue={sem1}
+              onInput={(e) => {
+                changeSem1(e.target.value);
+                setChanged(true);
+              }}
+            />
+            <input
+              id="sem2"
+              type="number"
+              defaultValue={sem2}
+              onInput={(e) => {
+                changeSem2(e.target.value);
+                setChanged(true);
+              }}
+            />
+            <input
+              id="sem3"
+              type="number"
+              defaultValue={sem3}
+              onInput={(e) => {
+                changeSem3(e.target.value);
+                setChanged(true);
+              }}
+            />
+            <input
+              id="sem4"
+              type="number"
+              defaultValue={sem4}
+              onInput={(e) => {
+                changeSem4(e.target.value);
+                setChanged(true);
+              }}
+            />
+            <div className="popup_buttons">
+              <button
+                id="save"
+                type="submit"
+                disabled={!changed}
+                onClick={() => {
+                  props.setIsUpdating(true);
 
-          <input
-            id="sem1"
-            defaultValue={sem1}
-            type="number"
-            name="sem1"
-            onChange={(e) => {
-              setUser({
-                ...user,
-                sem1: e.target.value,
-              });
-              setChanged(true);
-            }}
-            placeholder="enter sem1 marks"
-          />
-          <input
-            id="sem2"
-            defaultValue={sem2}
-            onChange={(e) => {
-              setUser({
-                ...user,
-                sem2: e.target.value,
-              });
-              setChanged(true);
-            }}
-            type="number"
-            name="sem2"
-            placeholder="enter sem2 marks"
-          />
-          <input
-            id="sem3"
-            defaultValue={sem3}
-            onChange={(e) => {
-              setUser({
-                ...user,
-                sem3: e.target.value,
-              });
-              setChanged(true);
-            }}
-            type="number"
-            name="sem3"
-            placeholder="enter sem3 marks"
-          />
-          <input
-            id="sem4"
-            defaultValue={sem4}
-            onChange={(e) => {
-              setUser({
-                ...user,
-                sem4: e.target.value,
-              });
-              setChanged(true);
-            }}
-            type="number"
-            name="sem4"
-            placeholder="enter sem4 marks"
-          />
-          <div className="popup_buttons">
-            <button
-              id="save"
-              disabled={!changed}
-              onClick={() => {
-                props.setIsUpdating(true);
-                const filteredUser = props.data.map((j) => {
-                  if (user.name !== j.name) {
-                    return j;
-                  }
-                });
-                const ussr = [...filteredUser, user];
-              }}
-            >
-              Save
-            </button>
-            <button
-              id="Cancel"
-              onClick={() => {
-                props.setTrigger(false);
-              }}
-            >
-              Cancel
-            </button>
-          </div>
+                  //passing the data back to the Table.jsx component
+                  props.handleEdit(
+                    props.userData.name,
+                    tempsem1,
+                    tempsem2,
+                    tempsem3,
+                    tempsem4
+                  );
+                  props.setTrigger(false);
+                }}
+              >
+                Save
+              </button>
+              <button
+                id="Cancel"
+                onClick={() => {
+                  // setUser({
+                  //   name : props.name,
+                  //   sem1 :
+                  // })
+                  props.setTrigger(false);
+                  //   props.onClick((event)=>{
+                  //     props.onChangeevent.)
+                  //   })
+                  // }}
+                  // >
+                }}
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

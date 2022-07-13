@@ -40,10 +40,15 @@
 .popup_content > h2{
     margin: 10px 0;
 }
-.popup_content > input{
+.popup_content > form{
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+}
+.popup_content > form > input{
     padding: 10px;
-    width: 50%;
-    margin: 10px 0;
+    width: 55%;
+    margin: 10px auto;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
@@ -55,16 +60,18 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
    
 }
-.popup > .popupData> .popup_content > .popup_buttons {
-    width: 100%;
+.popup > .popupData> .popup_content > form >  .popup_buttons {
+    width: 92%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px auto;
+    text-align: center;
+    padding: 15px
 }
-.popup > .popupData >.popup_content > .popup_buttons > button{
+.popup > .popupData >.popup_content >form> .popup_buttons > button{
     display: flex;
-    padding: 15px 15px;
+    padding: 13px 41px;
     border: 1px solid black;
     width: 25%;
     margin: 0 15%;

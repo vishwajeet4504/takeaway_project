@@ -1,11 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
-import "./Table.css";
+import React, { useEffect, useState } from "react";
 import Prompt from "./Prompt";
 import dataobj from "../data.json";
-import AppContext from "./Prompt";
+import "./Table.css";
+
 const Table = () => {
-  const [data, setData] = useState();
-  const [user, setUser] = useState(dataobj);
+  //usestate which stores the data which we got from the data.json file
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    setUser(dataobj);
+  }, []);
+
   const popupPrompt = (e) => {
     changeState(true);
     changeId(e.target.id);
@@ -16,8 +21,21 @@ const Table = () => {
   const [userData, setUserData] = useState({});
   const [isUpdating, setIsUpdating] = useState(false);
 
-  const context = useContext(AppContext);
-  useEffect(() => {}, [user]);
+  //function to make the changes in the old data. parameters we get from Prompt.jsx component.
+  const handleEdit = (name, tempsem1, tempsem2, tempsem3, tempsem4) => {
+    //using map function on users array which contains student objects to change the data
+    user.map((element, index) => {
+      if (element.name === name) {
+        user[index] = {
+          name: name,
+          sem1: tempsem1 === undefined ? element.sem1 : tempsem1,
+          sem2: tempsem2 === undefined ? element.sem2 : tempsem2,
+          sem3: tempsem3 === undefined ? element.sem3 : tempsem3,
+          sem4: tempsem4 === undefined ? element.sem4 : tempsem4,
+        };
+      }
+    });
+  };
 
   return (
     <div className="student_table">
@@ -36,7 +54,7 @@ const Table = () => {
           <th>Semester 4</th>
           <th></th>
         </thead>
-        {!isUpdating && (
+        {
           <tbody>
             {user?.map((student, index) => {
               return (
@@ -51,6 +69,7 @@ const Table = () => {
                       onClick={() => {
                         setUserData(student);
                         popupPrompt();
+                        console.log(userData);
                       }}
                       id={index}
                     >
@@ -61,17 +80,17 @@ const Table = () => {
               );
             })}
           </tbody>
-        )}
+        }
       </table>
       {
         <Prompt
           trigger={promptState}
           setTrigger={changeState}
           id={id}
-          data={data}
           isUpdating={isUpdating}
           setIsUpdating={setIsUpdating}
           userData={userData}
+          handleEdit={handleEdit}
         />
       }
     </div>
