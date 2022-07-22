@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/takeaway_project/static/css/main.ff9dbc10.css",
-    "main.js": "/takeaway_project/static/js/main.51e2e1a0.js",
+    "main.css": "/takeaway_project/static/css/main.e4c41f5a.css",
+    "main.js": "/takeaway_project/static/js/main.35eb51a7.js",
     "index.html": "/takeaway_project/index.html",
-    "main.ff9dbc10.css.map": "/takeaway_project/static/css/main.ff9dbc10.css.map",
-    "main.51e2e1a0.js.map": "/takeaway_project/static/js/main.51e2e1a0.js.map"
+    "main.e4c41f5a.css.map": "/takeaway_project/static/css/main.e4c41f5a.css.map",
+    "main.35eb51a7.js.map": "/takeaway_project/static/js/main.35eb51a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff9dbc10.css",
-    "static/js/main.51e2e1a0.js"
+    "static/css/main.e4c41f5a.css",
+    "static/js/main.35eb51a7.js"
   ]
 }
