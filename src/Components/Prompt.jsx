@@ -19,7 +19,19 @@ const Prompt = (props) => {
     changeSem2(sem2);
     changeSem3(sem3);
     changeSem4(sem4);
-  }, [props?.userData]);
+
+    ChangeCheckSem1(sem1);
+    ChangeCheckSem2(sem2);
+    ChangeCheckSem3(sem3);
+    ChangeCheckSem4(sem4);
+  }, [name, sem1, sem2, sem3, sem4]);
+
+  //to check if the input box is empty
+  const [checkSem1, ChangeCheckSem1] = useState();
+  const [checkSem2, ChangeCheckSem2] = useState();
+  const [checkSem3, ChangeCheckSem3] = useState();
+  const [checkSem4, ChangeCheckSem4] = useState();
+
   return props.trigger ? (
     <div className="popup">
       <div className="popupData">
@@ -31,6 +43,7 @@ const Prompt = (props) => {
               type="number"
               defaultValue={sem1}
               onInput={(e) => {
+                ChangeCheckSem1(e.target.value);
                 changeSem1(e.target.value);
                 setChanged(true);
               }}
@@ -40,6 +53,7 @@ const Prompt = (props) => {
               type="number"
               defaultValue={sem2}
               onInput={(e) => {
+                ChangeCheckSem2(e.target.value);
                 changeSem2(e.target.value);
                 setChanged(true);
               }}
@@ -49,6 +63,7 @@ const Prompt = (props) => {
               type="number"
               defaultValue={sem3}
               onInput={(e) => {
+                ChangeCheckSem3(e.target.value);
                 changeSem3(e.target.value);
                 setChanged(true);
               }}
@@ -58,6 +73,7 @@ const Prompt = (props) => {
               type="number"
               defaultValue={sem4}
               onInput={(e) => {
+                ChangeCheckSem4(e.target.value);
                 changeSem4(e.target.value);
                 setChanged(true);
               }}
@@ -67,18 +83,42 @@ const Prompt = (props) => {
                 id="save"
                 type="submit"
                 disabled={!changed}
-                onClick={() => {
-                  props.setIsUpdating(true);
+                onClick={(e) => {
+                  if (
+                    checkSem1 === "" ||
+                    checkSem2 === "" ||
+                    checkSem3 === "" ||
+                    checkSem4 === ""
+                  ) {
+                    alert("please fill all the fields correctly");
+                  } else {
+                    if (
+                      checkSem1 < 0 ||
+                      checkSem1 > 100 ||
+                      checkSem2 < 0 ||
+                      checkSem2 > 100 ||
+                      checkSem3 < 0 ||
+                      checkSem3 > 100 ||
+                      checkSem4 < 0 ||
+                      checkSem4 > 100
+                    ) {
+                      alert("Semester marks has to be between 0 and 100");
+                    } else {
+                      props.setIsUpdating(true);
 
-                  //passing the data back to the Table.jsx component
-                  props.handleEdit(
-                    props.userData.name,
-                    tempsem1,
-                    tempsem2,
-                    tempsem3,
-                    tempsem4
-                  );
-                  props.setTrigger(false);
+                      //passing the data back to the Table.jsx component
+                      props.handleEdit(
+                        props.userData.name,
+                        tempsem1,
+                        tempsem2,
+                        tempsem3,
+                        tempsem4
+                      );
+                      props.setTrigger(false);
+                    }
+                  }
+
+                  e.preventDefault();
                 }}
               >
                 Save

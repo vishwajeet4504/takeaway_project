@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/takeaway_project/static/css/main.e4c41f5a.css",
+    "main.js": "/takeaway_project/static/js/main.35eb51a7.js",
+    "index.html": "/takeaway_project/index.html",
+    "main.e4c41f5a.css.map": "/takeaway_project/static/css/main.e4c41f5a.css.map",
+    "main.35eb51a7.js.map": "/takeaway_project/static/js/main.35eb51a7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4c41f5a.css",
+    "static/js/main.35eb51a7.js"
+  ]
+}
